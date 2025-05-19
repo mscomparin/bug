@@ -133,6 +133,7 @@ function db2text
 
 function addfile
 {	
+	EDITING="$2"
 	ID=`grep "^Id:" $1 | head -n 1 | cut -d : -f 2- | string2db`
 	SUBJECT=`grep "^Subject:" $1 | head -n 1 | cut -d : -f 2- | string2db`
 	STATE=`grep "^State:" $1 | head -n 1 | cut -d : -f 2- | string2db`
@@ -157,12 +158,14 @@ function addfile
 
 	echo "$ID	$PRIORITY	$STATE	$SUBJECT	$DESCRIPTION" >> $BUG_PROJECT
 
-	# Update the next ID number
-	NEXT=`getnext`
-	if [ $NEXT -gt $ID ]; then
-		updatenext $((NEXT + 1))
-	else
-		updatenext $((ID + 1))
+	# Update the next ID number only when not editing
+	if [ "$EDITING" != "edit" ]; then
+		NEXT=`getnext`
+		if [ $NEXT -gt $ID ]; then
+			updatenext $((NEXT + 1))
+		else
+			updatenext $((ID + 1))
+		fi
 	fi
 		
 	return 0
@@ -263,7 +266,7 @@ function edit
 
 		if [ "$MD5" != "$MD5_bis" ]; then
 			delete $ID
-			addfile "$FILE" && rm "$FILE"
+			addfile "$FILE" "edit" && rm "$FILE"
 		else
 			echo "File not changed. Not changing the ticket."
 			rm "$FILE"
