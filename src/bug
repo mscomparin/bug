@@ -55,6 +55,9 @@
 #   - error messages to stderr
 #   - more checks and help on BUG_PROJECT environ
 #
+# scompo <scompo@gmail.com>
+#   - fixed increment of id when editing a file
+#
 # TODO:
 #   Support for an array of bug report files ?? readonly
 #   Check BUG_PROJECT file format before processing
