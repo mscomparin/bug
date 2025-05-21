@@ -1,6 +1,6 @@
 # Bug
 
-The following stuff is from: [bug homepage][https://viric.name/soft/bug/]
+The following stuff is from: [the bug program homepage][bug-home]
 
 Bug is a simple todo-tracking system for the unix commandline.
 It's written in POSIX sh, and it only requires the typical Unix utilities: grep, cut, tr, ... 
@@ -52,4 +52,4 @@ Copy of the manual at v1.1
 Author: [Lluís batlle i Rossell](http://vicerveza.homeunix.net/~viric/), viric\_at\_vicerveza\_dot\_homeunix\_dot\_net
 
 [latest-release]: https://viric.name/soft/bug/bug.gz
-[luis-home]: https://viric.name/soft/bug/
+[bug-home]: https://viric.name/soft/bug/
