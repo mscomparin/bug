@@ -13,7 +13,7 @@ It relies on four fixed fields: ID, Priority, State, and Subject.
 There is also a fifth free-text field for any other information you may want to store about the issue.
 There is no database locking or notifications, so it's mostly for tracking the user's own issues.
 
-You can look at a ![screenshot](img/bug-shot.png "bug screenshot") if you want.
+You can look at a [screenshot](img/bug-shot.png "bug screenshot") if you want.
 
 Download the latest version (GPL 2 or later licensed): [bug.gz](latest-release) - v1.1 (The manual is in the header of the file)
 
